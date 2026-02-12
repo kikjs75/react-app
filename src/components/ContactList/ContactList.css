@@ -1,0 +1,40 @@
+.contact-list {
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-list__title {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contact-list__empty {
+  color: #6b7280;
+  font-size: 15px;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.contact-list__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.contact-list__table th,
+.contact-list__table td {
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.contact-list__table th {
+  font-weight: 600;
+  color: #374151;
+  background-color: #f9fafb;
+}
+
+.contact-list__table tbody tr:hover {
+  background-color: #f3f4f6;
+}

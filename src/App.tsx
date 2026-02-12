@@ -1,32 +1,23 @@
-import Button from "./components/Button";
+import { useState } from "react";
+import type { Contact } from "./types";
+import ContactForm from "./components/ContactForm";
+import ContactList from "./components/ContactList";
 import "./App.css";
 
 function App() {
+  const [contacts, setContacts] = useState<Contact[]>([]);
+
+  function handleAddContact(contact: Contact) {
+    setContacts((prev) => [...prev, contact]);
+  }
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 24, padding: 48 }}>
-      <h1>Button Component</h1>
-
-      <section style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="danger">Danger</Button>
-        <Button variant="ghost">Ghost</Button>
-      </section>
-
-      <section style={{ display: "flex", gap: 12, alignItems: "center" }}>
-        <Button size="sm">Small</Button>
-        <Button size="md">Medium</Button>
-        <Button size="lg">Large</Button>
-      </section>
-
-      <section style={{ display: "flex", gap: 12 }}>
-        <Button disabled>Disabled</Button>
-        <Button variant="danger" disabled>Disabled Danger</Button>
-      </section>
-
-      <section>
-        <Button onClick={() => alert("Clicked!")}>Click Me</Button>
-      </section>
+    <div className="app">
+      <h1 className="app__title">연락처 관리</h1>
+      <div className="app__content">
+        <ContactForm onSubmit={handleAddContact} />
+        <ContactList contacts={contacts} />
+      </div>
     </div>
   );
 }

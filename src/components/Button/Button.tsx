@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes } from "react";
 import "./Button.css";
 
 type Variant = "primary" | "secondary" | "danger" | "ghost";
