@@ -1,13 +1,15 @@
 import { useState } from "react";
-import type { Contact } from "./types";
 import ContactForm from "./components/ContactForm";
 import ContactList from "./components/ContactList";
 import "./App.css";
 
 function App() {
-  const [contacts, setContacts] = useState<Contact[]>([]);
+  const [contacts, setContacts] = useState([]);
 
-  function handleAddContact(contact: Contact) {
+  /**
+   * @param {import('./types').Contact} contact
+   */
+  function handleAddContact(contact) {
     setContacts((prev) => [...prev, contact]);
   }
 

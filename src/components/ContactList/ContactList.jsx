@@ -1,11 +1,10 @@
-import type { Contact } from "../../types";
 import "./ContactList.css";
 
-interface ContactListProps {
-  contacts: Contact[];
-}
-
-export default function ContactList({ contacts }: ContactListProps) {
+/**
+ * @param {Object} props
+ * @param {import('../../types').Contact[]} props.contacts
+ */
+export default function ContactList({ contacts }) {
   return (
     <div className="contact-list">
       <h2 className="contact-list__title">연락처 목록</h2>
