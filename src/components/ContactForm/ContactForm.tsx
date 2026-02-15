@@ -1,19 +1,18 @@
+import type { FormEvent } from "react";
 import { useState } from "react";
 import Button from "../Button";
+import type { Contact } from "../../types";
 import "./ContactForm.css";
 
-/**
- * @param {Object} props
- * @param {(contact: import('../../types').Contact) => void} props.onSubmit
- */
-export default function ContactForm({ onSubmit }) {
+interface ContactFormProps {
+  onSubmit: (contact: Contact) => void;
+}
+
+export default function ContactForm({ onSubmit }: ContactFormProps) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
 
-  /**
-   * @param {import('react').FormEvent} e
-   */
-  function handleSubmit(e) {
+  function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
     const trimmedName = name.trim();
